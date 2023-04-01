@@ -14,6 +14,9 @@ mongoose.connect(process.env.MONGO_URL,{
     console.log(err);
 });
 
+//route
+app.use('api/v1/users',require('./routes/userRoute'))
+
 app.use(express.json());
 
 app.listen(process.env.PORT, ()=>{
