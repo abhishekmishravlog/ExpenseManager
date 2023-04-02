@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, message, Modal, Select, Table, DatePicker } from "antd";
+import { UnorderedListOutlined, AreaChartOutlined } from '@ant-design/icons';
+import Analytics from "../components/Analytics";
+
 import Layout from "./../components/Layout/Layout";
 import axios from "axios";
 import Spinner from "./../components/Spinner";
@@ -13,6 +16,7 @@ const HomePage = () => {
   const [frequency, setFrequency] = useState("7");
   const [selectedDate, setSelectedate] = useState([]);
   const [type, setType] = useState("all");
+  const [viewData, setviewData] = useState('table');
 
   //table data
   const columns = [
@@ -122,6 +126,14 @@ const HomePage = () => {
             />
           )}
         </div>
+        <div className="switch-icons">
+          <UnorderedListOutlined className={`mx-2 ${viewData === "table" ? "active-icon" : "inactive-icon"
+            }`}
+            onClick={() => setviewData('table')} />
+          <AreaChartOutlined className={`mx-2 ${viewData === "analytics" ? "active-icon" : "inactive-icon"
+            }`}
+            onClick={() => setviewData('analytics')} />
+        </div>
         <div>
           <button
             className="btn btn-primary"
@@ -132,7 +144,11 @@ const HomePage = () => {
         </div>
       </div>
       <div className="content">
-        <Table columns={columns} dataSource={allTransection} />
+        {viewData === "table" ? (
+          <Table columns={columns} dataSource={allTransection} />
+        ) : (
+          <Analytics allTransection={allTransection} />
+        )}
       </div>
       <Modal
         title="Add Transaction"
