@@ -31,7 +31,7 @@ const Register = () => {
       <div className="resgister-page ">
         {loading && <Spinner />}
         <Form layout="vertical" onFinish={submitHandler}>
-          <h1>Register Form</h1>
+          <h1>SIGNUP</h1>
           <Form.Item label="Name" name="name">
             <Input />
           </Form.Item>
@@ -41,9 +41,11 @@ const Register = () => {
           <Form.Item label="Password" name="password">
             <Input type="password" />
           </Form.Item>
-          <div className="d-flex justify-content-between">
-            <Link to="/login">Already Register ? Click Here to login</Link>
-            <button className="btn btn-primary">Register</button>
+          <div>
+            <div>Already Registered? <Link to="/login">Click Here</Link> to Login</div>
+            <div className="button">
+              <button className="btn-reg btn btn-primary">Resgiter</button>
+            </div>
           </div>
         </Form>
       </div>

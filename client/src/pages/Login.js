@@ -32,25 +32,27 @@ const Login = () => {
   }, [navigate]);
   return (
     <>
-      <div className="resgister-page ">
-        {loading && <Spinner />}
-        <Form layout="vertical" onFinish={submitHandler}>
-          <h1>Login Form</h1>
+        <div className="resgister-page ">
+            {loading && <Spinner />}
+            <Form layout="vertical" onFinish={submitHandler}>
+                <h1>LOGIN</h1>
 
-          <Form.Item label="Email" name="email">
-            <Input type="email" />
-          </Form.Item>
-          <Form.Item label="Password" name="password">
-            <Input type="password" />
-          </Form.Item>
-          <div className="d-flex justify-content-between">
-            <Link to="/register">Not a user ? Click Here to regsiter</Link>
-            <button className="btn btn-primary">Login</button>
-          </div>
-        </Form>
-      </div>
+                <Form.Item label="Email" name="email">
+                    <Input type="email" />
+                </Form.Item>
+                <Form.Item label="Password" name="password">
+                    <Input type="password" />
+                </Form.Item>
+                <div>
+                    <div>Don't have an account yet? <Link to="/register">Click Here</Link> to Register</div>
+                    <div className="button">
+                        <button className="btn-login btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </Form>
+        </div>
     </>
-  );
+);
 };
 
 export default Login;

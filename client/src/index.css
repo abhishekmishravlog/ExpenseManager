@@ -4,9 +4,47 @@
   box-sizing: border-box;
 }
 
-.content {
-  height: 80vh;
+.hdr {
+  position: relative;
+  height: 70px;
+  margin: 0;
 }
+
+.ftr {
+  position: fixed;
+  bottom: 0;
+  margin-top: auto;
+  height: 70px;
+  width: 100%;
+  margin: 0;
+}
+
+.mid-content {
+  position: absolute;
+  overflow: auto;
+  top: 70px;
+  bottom: 70px;
+  width: 100%;
+}
+
+/* .content {
+  height: 80vh;
+} */
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-reg {
+  width: 250px;
+}
+
+.btn-login {
+  width: 310px;
+}
+
 
 .resgister-page {
   display: flex;
@@ -15,7 +53,13 @@
   height: 90vh;
 }
 
+.resgister-page h1 {
+  display: flex;
+  justify-content: center;
+}
+
 /* transection page */
+
 .filters {
   display: flex;
   align-items: center;
@@ -23,6 +67,7 @@
   padding: 15px 20px;
   box-shadow: 0 0 3px gray;
 }
+
 /* transection page */
 
 /* antd icons */
@@ -41,6 +86,9 @@
 .active-icon {
   color: black;
 }
+
 .inactive-icon {
   color: gray;
 }
+
+/* antd icons */
