@@ -148,7 +148,7 @@ const HomePage = () => {
           <Select value={frequency} onChange={(values) => setFrequency(values)}>
             <Select.Option value="7">LAST 1 Week</Select.Option>
             <Select.Option value="30">LAST 1 Month</Select.Option>
-            <Select.Option value="365">LAST 1 year</Select.Option>
+            <Select.Option value="365">LAST 1 Year</Select.Option>
             <Select.Option value="custom">Custom</Select.Option>
           </Select>
           {frequency === "custom" && (
